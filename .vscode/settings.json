@@ -6,7 +6,6 @@
     "artifacts": true,
     "cache": true,
     "coverage": true,
-    "typechain-types": true,
     ".husky": true,
     ".lintstagedrc": true,
     ".prettierignore": true,

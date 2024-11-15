@@ -16,7 +16,6 @@ deployments/hardhat.json
 # 하드햇 생성 데이터
 artifacts
 cache
-typechain-types
 
 # 기타
 .DS_Store
