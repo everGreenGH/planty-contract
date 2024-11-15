@@ -45,14 +45,14 @@ const config: HardhatUserConfig = {
       chainId: 1337,
     },
     // replace with your network configuration
-    // testnet: {
-    //   url: PROVIDER_URL || "",
-    //   chainId: +(CHAIN_ID || 0),
-    //   from: DEVELOPER_ACCOUNT || "",
-    //   gas: "auto",
-    //   gasPrice: Number(GAS_PRICE),
-    //   accounts: [DEVELOPER_PRIVATE_KEY || "0"],
-    // },
+    flow_testnet: {
+      url: PROVIDER_URL || "",
+      chainId: +(CHAIN_ID || 0),
+      from: DEVELOPER_ACCOUNT || "",
+      gas: "auto",
+      gasPrice: Number(GAS_PRICE),
+      accounts: [DEVELOPER_PRIVATE_KEY || "0"],
+    },
     // mainnet: {
     //   url: PROVIDER_URL || "",
     //   chainId: +(CHAIN_ID || 0),
