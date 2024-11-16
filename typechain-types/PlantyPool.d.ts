@@ -29,7 +29,6 @@ interface PlantyPoolInterface extends ethers.utils.Interface {
     "delta()": FunctionFragment;
     "getBuyInfo(uint256)": FunctionFragment;
     "getSellInfo(uint256)": FunctionFragment;
-    "isPublicSaleActive()": FunctionFragment;
     "owner()": FunctionFragment;
     "protocolFeeMultiplier()": FunctionFragment;
     "publicSaleEndTime()": FunctionFragment;
@@ -73,10 +72,6 @@ interface PlantyPoolInterface extends ethers.utils.Interface {
   encodeFunctionData(
     functionFragment: "getSellInfo",
     values: [BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "isPublicSaleActive",
-    values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
@@ -140,10 +135,6 @@ interface PlantyPoolInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "getBuyInfo", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getSellInfo",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "isPublicSaleActive",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
@@ -298,8 +289,6 @@ export class PlantyPool extends BaseContract {
       }
     >;
 
-    isPublicSaleActive(overrides?: CallOverrides): Promise<[boolean]>;
-
     owner(overrides?: CallOverrides): Promise<[string]>;
 
     protocolFeeMultiplier(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -388,8 +377,6 @@ export class PlantyPool extends BaseContract {
     }
   >;
 
-  isPublicSaleActive(overrides?: CallOverrides): Promise<boolean>;
-
   owner(overrides?: CallOverrides): Promise<string>;
 
   protocolFeeMultiplier(overrides?: CallOverrides): Promise<BigNumber>;
@@ -477,8 +464,6 @@ export class PlantyPool extends BaseContract {
         protocolFee: BigNumber;
       }
     >;
-
-    isPublicSaleActive(overrides?: CallOverrides): Promise<boolean>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
@@ -613,8 +598,6 @@ export class PlantyPool extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    isPublicSaleActive(overrides?: CallOverrides): Promise<BigNumber>;
-
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
     protocolFeeMultiplier(overrides?: CallOverrides): Promise<BigNumber>;
@@ -687,10 +670,6 @@ export class PlantyPool extends BaseContract {
 
     getSellInfo(
       usdcAmount: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    isPublicSaleActive(
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 

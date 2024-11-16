@@ -53,6 +53,22 @@ const config: HardhatUserConfig = {
       gasPrice: Number(GAS_PRICE),
       accounts: [DEVELOPER_PRIVATE_KEY || "0"],
     },
+    rootstock_testnet: {
+      url: PROVIDER_URL || "",
+      chainId: +(CHAIN_ID || 0),
+      from: DEVELOPER_ACCOUNT || "",
+      gas: "auto",
+      gasPrice: Number(GAS_PRICE),
+      accounts: [DEVELOPER_PRIVATE_KEY || "0"],
+    },
+    morph_testnet: {
+      url: PROVIDER_URL || "",
+      chainId: +(CHAIN_ID || 0),
+      from: DEVELOPER_ACCOUNT || "",
+      gas: "auto",
+      gasPrice: Number(GAS_PRICE),
+      accounts: [DEVELOPER_PRIVATE_KEY || "0"],
+    },
     // mainnet: {
     //   url: PROVIDER_URL || "",
     //   chainId: +(CHAIN_ID || 0),

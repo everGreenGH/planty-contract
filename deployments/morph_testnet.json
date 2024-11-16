@@ -1,9 +1,9 @@
 {
-  "name": "flow_testnet",
-  "chainId": "545",
+  "name": "morph_testnet",
+  "chainId": "2810",
   "contracts": {
     "PlantyFactory": {
-      "address": "0x9612DEB2798dda923e57EFbb29f74B6dCB082E56",
+      "address": "0x4A15bB7C738C1237b61d0A96dC2027F067A091Fd",
       "abi": [
         {
           "inputs": [],
@@ -247,7 +247,7 @@
       ]
     },
     "PlantyToken": {
-      "address": "0xa8da81d02Bd880E15C664Cc7f632e973096E1f25",
+      "address": "0x52f60357eA1E91eAFb1cc5Fc7a52DaB06a65E805",
       "abi": [
         {
           "inputs": [
@@ -558,7 +558,7 @@
       ]
     },
     "TestToken": {
-      "address": "0xcba79246f7E1890B7CB05B3DC2b39Cb8512d74Ed",
+      "address": "0x1947b8FCf0E418AB1501a24148712452840a4661",
       "abi": [
         {
           "inputs": [

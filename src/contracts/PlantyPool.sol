@@ -28,17 +28,16 @@ contract PlantyPool is IPlantyPool, Ownable, ReentrancyGuard {
     event PublicSaleSell(address indexed user, uint256 assetAmount, uint256 usdcAmount);
 
     modifier onlyDuringPublicSale() {
-        require(isPublicSaleActive && block.timestamp < publicSaleEndTime, "Not in public sale period");
+        require(block.timestamp < publicSaleEndTime, "Not in public sale period");
         _;
     }
 
     modifier onlyAfterPublicSale() {
-        require(!isPublicSaleActive || block.timestamp >= publicSaleEndTime, "Public sale is active");
+        require(block.timestamp >= publicSaleEndTime, "Public sale is active");
         _;
     }
 
     // Public Sale 관련 변수
-    bool public isPublicSaleActive;
     uint256 public publicSaleEndTime;
     uint256 public publicSalePrice; // Public Sale 시 assetToken의 지정가
 
@@ -53,7 +52,6 @@ contract PlantyPool is IPlantyPool, Ownable, ReentrancyGuard {
         // Public Sale 설정
         publicSaleEndTime = block.timestamp + params.publicSaleDuration;
         publicSalePrice = params.publicSalePrice;
-        isPublicSaleActive = true;
 
         transferOwnership(admin);
 
@@ -64,7 +62,6 @@ contract PlantyPool is IPlantyPool, Ownable, ReentrancyGuard {
     function configurePublicSale(uint256 duration, uint256 price) public onlyOwner {
         publicSaleEndTime = block.timestamp + duration;
         publicSalePrice = price;
-        isPublicSaleActive = true;
 
         emit PublicSaleConfigured(publicSaleEndTime, publicSalePrice);
     }
