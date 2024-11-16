@@ -74,7 +74,7 @@ contract PlantyPool is IPlantyPool, Ownable, ReentrancyGuard {
         require(numItems > 0, "Must buy at least one item");
         require(numItems <= reserveAsset, "Insufficient asset liquidity");
 
-        uint256 totalCost = numItems * publicSalePrice;
+        uint256 totalCost = (numItems * publicSalePrice) / 1e18;
 
         reserveUSDC += totalCost;
         reserveAsset -= numItems;
@@ -89,7 +89,7 @@ contract PlantyPool is IPlantyPool, Ownable, ReentrancyGuard {
     // Public Sale 동안의 지정가 판매
     function sellAssetDuringPublicSale(uint256 numItems) external nonReentrant onlyDuringPublicSale {
         require(numItems > 0, "Must sell at least one item");
-        uint256 totalRevenue = numItems * publicSalePrice;
+        uint256 totalRevenue = (numItems * publicSalePrice) / 1e18;
 
         // 외부 호출 전에 상태 변경 (Check-Effect-Interaction)
         reserveAsset += numItems;
