@@ -1,19 +1,6 @@
-import { localInfo } from "@constants";
+import { localInfo, CreatePoolInput } from "@constants";
 import { faker } from "@faker-js/faker";
 import { BigNumber, ethers } from "ethers";
-
-export interface CreatePoolInput {
-  assetToken: string;
-  assetInitialSupply: BigNumber;
-  usdcToken: string;
-  usdcInitialSupply: BigNumber;
-  initialSpotPrice: BigNumber;
-  delta: BigNumber;
-  protocolFeeMultiplier: BigNumber;
-  tradeFeeMultiplier: BigNumber;
-  publicSaleDuration: BigNumber;
-  publicSalePrice: BigNumber;
-}
 
 export const mockCreatePoolInput = (data?: Partial<CreatePoolInput>): CreatePoolInput => {
   const assetInitialSupply = localInfo.plantyToken.adminSupply; // 90000

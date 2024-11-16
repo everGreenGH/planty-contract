@@ -3,7 +3,7 @@
   "chainId": "545",
   "contracts": {
     "PlantyFactory": {
-      "address": "0x4A15bB7C738C1237b61d0A96dC2027F067A091Fd",
+      "address": "0x39374E9E734114672D41DE9c9a4E7eBf877c08AA",
       "abi": [
         {
           "inputs": [],
@@ -247,7 +247,7 @@
       ]
     },
     "PlantyToken": {
-      "address": "0x52f60357eA1E91eAFb1cc5Fc7a52DaB06a65E805",
+      "address": "0xFa509737CC5FAcdc4AdecB0A94A579118fCbc97E",
       "abi": [
         {
           "inputs": [
@@ -558,7 +558,7 @@
       ]
     },
     "TestToken": {
-      "address": "0x1947b8FCf0E418AB1501a24148712452840a4661",
+      "address": "0x83A6dAB9f989430c981ED6e614cADe314C6Af01c",
       "abi": [
         {
           "inputs": [

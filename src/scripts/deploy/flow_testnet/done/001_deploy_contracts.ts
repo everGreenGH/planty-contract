@@ -1,4 +1,5 @@
 import { testnetInfo } from "@constants";
+import { TestToken } from "@typechains";
 import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
@@ -45,12 +46,15 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
   const testToken = await deploy("TestToken", {
     from: admin.address,
     contract: "TestToken",
-    args: ["TEST", "TEST"],
+    args: ["TEST USDC", "USDC"],
     log: true,
     autoMine: true,
     gasLimit: 10000000,
   });
   console.log("🚀 TestToken deployed at", testToken.address);
+
+  const testTokenContract = await ethers.getContract<TestToken>("TestToken");
+  await testTokenContract.connect(admin).mint(admin.address, ethers.utils.parseEther("1000000000000"));
 };
 
 export default func;

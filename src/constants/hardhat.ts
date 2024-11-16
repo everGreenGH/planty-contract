@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
-import { PlantyDeployConfig } from "./interface";
+import { PlantyConfig } from "./interface";
 
-export const localInfo: PlantyDeployConfig = {
+export const localInfo: PlantyConfig = {
   plantyToken: {
     name: "PlantyToken",
     symbol: "PLANTY",

@@ -3,7 +3,6 @@
     "**/.next/": true,
     "**/node_modules/": true,
     "**/dist/": true,
-    "artifacts": true,
     "cache": true,
     "coverage": true,
     ".husky": true,
